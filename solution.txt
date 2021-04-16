@@ -1,0 +1,30 @@
+Turning String to URL
+no replace()/ Reg
+
+//take a string as an argument and convert it into URL
+// string has characters, no integers
+// does not case sensative
+
+input: "I love coding"
+output: "I%20love%20coding"
+
+function convertStr(str) {
+  if (str.length === 0){
+    return -1
+  }
+
+ var strArray = str.split("")
+ var newArray = []
+ for (var i=0; i<strArray.length; i++) {
+   if(strArray[i] === " ") {
+     newArray.push("%20")
+   }else {
+     newArray.push(strArray[i])
+   }
+ }
+ return newArray.join("")
+
+}
+
+convertStr("I love coding")
+
